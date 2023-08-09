@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,500&display=swap');
+body{
+    background-image: url(signupb.svg);
+    margin: 0;
+    overflow: hidden;
+    background-size: cover;
+    background-position: 25% 25%;
+    display: flex;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+  
+    
+}
+.Loginform{
+  
+    background-color: whitesmoke;
+    border-radius: 20px;
+    /* margin-bottom: auto; */
+    height: 26rem;
+    width: 20rem;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translateX(50%);
+    transform: translateY(33%);
+     /* border-color: whitesmoke;
+        box-shadow:
+          rgba(0, 0, 0, 0.25) 0px 0px 0px 1px,
+          rgba(0, 0, 0,0.2) 0px 1px 0px 0px,
+          rgba(0, 0, 0, 0.2) 0px 0px 8px 0px,
+          rgba(0, 0, 0, 0.2) 0px 20px 30px 0px; */
+          box-shadow: 1px 1px 100px black;
+      
+        
+      
+
+    
+    
+}
+
+#heading{
+   text-align: center;
+   
+    font-size:larger;
+    line-height: 10vh;
+}
+.input-group{
+    margin-left: 8%;
+}
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 15px;
+  /* identical to box height */
+    width: 100%;
+   
+  /* Gray 2 */
+  
+  color: #4F4F4F;
+  }
+.input-group [type="email"] {
+    width: 15rem;
+    padding-top : 10px;
+    padding-bottom : 10px;
+    border-radius: 5px;
+    border: 1px solid #828282;;
+    color:#828282;
+  }
+  .input-group [type="text"] {
+    width: 15rem;
+    padding-top : 10px;
+    padding-bottom : 10px;
+    border-radius: 5px;
+    border: 1px solid #828282;;
+    color:#828282;
+  }
+
+  .input-group [type="password"] {
+    width: 15rem;
+    padding-top : 10px;
+    padding-bottom : 10px;
+    border-radius: 5px;
+    border: 1px solid #828282;;
+    color:#828282;
+  }
+#forgettext{
+   
+    padding-left: 52%;
+    text-decoration: none;
+    color:#0028B4;
+    display: flex;
+    padding-top:  3%;
+    padding-bottom: 0;
+    margin: 0;
+    
+}
+#verify{
+    padding-left: 63%;
+    line-height: none;
+    text-decoration: none;
+    color:#0028B4;
+    
+}
+#verify:hover
+{
+    text-decoration: underline;
+}
+#forgettext:hover{
+    text-decoration: underline;
+}
+.login-button{
+   display: flex;
+   justify-content: center;
+   padding: auto;
+   padding-top: 3%;
+}
+.buttonoriginal{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.7vh;
+    padding-bottom: 0.7vh;
+    border-radius: 20px;
+    background-color: #02A691;
+    border-color: white;
+    color: black;
+    transition: transform  0.3s;
+    font-weight: bold;
+
+}
+.buttonoriginal:hover{
+    transform: scale(1.15);
+    text-decoration: underline;
+}
+#reg{
+    text-decoration: none;
+    padding-top: 2%;
+    
+    color:#0028B4;
+    justify-content: center;
+    display: flex;
+}
+#reg:hover{
+    text-decoration: underline;
+}
+/* 
+ .whiteboxholder
+{
+    overflow: hidden;
+    max-height: 100vh;
+    object-fit: cover;
+}
+
+.rotatewhitebox{
+  background-color: #d9d9d9;
+  margin:0;
+  width:55%;
+  height: 200vh;
+  rotate: 20deg;
+  float: right;
+  
+}
+.loginsignupbox{
+    width: 20%;
+    height: 20vh;
+    color: #ffffff;
+}  */

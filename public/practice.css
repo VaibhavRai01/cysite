@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Tektur&display=swap');
+html
+{
+  scrollbar-color: #03A690 rgb(255,255,255,0.01);
+  font-family: 'Electrolize', sans-serif;
+  background-color: #1f1f1f;
+}
+::-webkit-scrollbar
+{
+  width : 0.5vw;
+  background-color: #1f1f1f;
+  opacity: 50%;
+}
+::-webkit-scrollbar-thumb
+{
+  background-color: #03A690;
+  border-radius: 100vw;
+}
+.heading
+{
+    text-align: center;
+    font-size: 4rem;
+    font-family: 'Tektur', cursive;
+    color: white;
+    background-color: #1f1f1f;
+
+}
+.accordion
+{
+    background-color: #1f1f1f !important;
+    padding: 10px;
+
+}
+.accordion-button
+{
+    background-color: #1f1f1f !important;
+    color: white !important;
+}
+body
+{
+    background-color: #1f1f1f !important;
+}
+.accordion-button.collapsed::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  }
+  .spot {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+.svg-wrapper {
+    margin-top: 0;
+    position: relative;
+    width: 150px;
+    /*make sure to use same height/width as in the html*/
+    height: 40px;
+    display: inline-block;
+    border-radius: 3px;
+    margin-left: 5px;
+    margin-right: 5px  ;
+      background-color: #1f1f1f !important;
+
+  }
+  #shape {
+    stroke-width: 6px;
+    fill: transparent;
+    stroke: #03A690;
+    stroke-dasharray: 85 400;
+    stroke-dashoffset: -220;
+    transition: 1s all ease;
+  }
+  /* 
+      Pushing the text up into the SVG. Without this the
+      text would be below the div's.
+  */
+  .done
+  {
+    background-color: #42E698;
+    /* background-color: #D4EDC9; */
+
+  }
+  #text {
+    margin-top: -35px;
+    text-align: center;
+  }
+  
+  #text a {
+    color: white;
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 1.1em;
+  }
+  /* 
+      Changing the shape on hover. I change the color of the stroke,
+  make it thinner, then set it to again wrap around the entire parent element.
+  */
+  
+  .svg-wrapper:hover #shape {
+    stroke-dasharray: 50 0;
+    stroke-width: 3px;
+    align-items: center;
+    stroke-dashoffset: 0;
+    stroke: #03A690;
+  }
+  .accordion-body
+  {
+    background-color: #fafaff !important;
+  }
+  table
+  {
+    width : 100%;
+  }
+  /* .done 
+  {
+    background-color: #42E698;
+  } */
+  tr 
+  {
+    border-top: 1.2px solid #d9d9d9 !important;
+    border-bottom: 1.2px solid #d9d9d9 !important;
+  }
+  td
+  {
+    padding : 10px;
+    border : 5px;
+  }
+  

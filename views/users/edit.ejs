@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMS</title>
+    <link rel="stylesheet" href="./pichart.css">
+    
+</head>
+<body>
+  <div id="particles-js"></div>
+    <form action="" method="POST" enctype="multipart/form-data">
+    <div class="frontpage">
+        <div id="header">
+            <input class = "edittext" type="text" name = "name" value = "<%= user.name %>" placeholder="" >
+        </div>
+        <div class='codeinfo'>
+          <div class='child left glass'>
+            <div class="platform">
+             Codeforces  &nbsp;: &nbsp;   <input type="text"class="edittextsmall" name = "cf_id" value = "<%= user.cf_id %>" placeholder="Enter cf id" >
+            </div>
+            <div class="merger">
+                <div class="inbetween" >
+                  Rating : <%=leaderboard.cf_rating %>
+                  <br>
+                  Solved : <%=leaderboard.cf_solved%>
+               </div>
+                <div class="programming-stats">
+                  <div class="chart-container">
+                    <canvas class="my-chart-1" ></canvas>
+                  </div>
+                </div>
+              </div>
+            
+            
+            
+          </div>
+          <div class='child right glass'>
+            <div class="platform">
+              Leetcode &nbsp;: &nbsp; <input class="edittextsmall" type="text" name = "lc_id" value = "<%= user.lc_id %>" placeholder = "Enter lc id" >
+              <br>
+              <br>
+              <%
+           if(typeof message !== 'undefined'){
+               %>
+                   <h4><%= message %></h4>
+               <%
+           }
+       
+           %>
+            </div>
+            <div class="merger">
+                <div class="inbetween" >
+                  Rating : <%=leaderboard.lc_rating %>
+                  <br>
+                  Easy : <%=leaderboard.lc_easy%>
+                  <br>
+                  Medium : <%=leaderboard.lc_medium%>
+                  <br>
+                  Hard : <%=leaderboard.lc_hard%>
+               </div>
+                <div class="programming-stats">
+                  <div class="chart-container">
+                    <canvas class="my-chart" ></canvas>
+                  </div>
+                </div>
+            </div>
+           
+            <!-- <div class="programming-stats">
+                <div class="chart-container">
+                  <canvas class="my-chart" style="border: 1px solid green;"></canvas>
+                </div>
+            
+                <div class="details">
+                  <ul></ul>
+                </div> -->
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="downpage">
+        <!-- <div class="svg-wrapper">
+          <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+            <rect id="shape" height="40" width="150"/>
+            <div id="text">
+              <a href="/home"><span class="spot"></span>Back to homepage</a>
+            </div>
+          </svg>
+        </div>    -->
+        <br>
+        <div class="svg-wrapper">
+          <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+            <rect id="shape" height="40" width="150"/>
+            <div id="text">
+                <input type="submit" style=" font-size : large ;background-color : transparent; border : 0; color:white; cursor : pointer; font-family: 'Electrolize',sans-serif;"value="Update Profile">
+            </div>
+          </svg>
+        </div>   
+        <br>
+        <!-- <div class="svg-wrapper">
+          <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+            <rect id="shape" height="40" width="150"/>
+            <div id="text">
+              <a href="/logout"><span class="spot"></span>Logout</a>
+            </div>
+          </svg>
+        </div>    -->
+       <!-- <a href="/home" class="button">Back to Homepage</a>
+        <br>
+        <a href="./edit?id=<%= user._id %>" class="button">Edit Your Profile</a>
+        <br>
+        <a class="button" href="/logout">Logout</a> -->
+      </div> 
+      
+        <input type="hidden" name="user_id" value="<%= user._id %>">
+          <!-- <input type="email" name = "email" value = "<%= user.email %>" placeholder = "Enter Email" type = "hidden"> -->
+         
+          
+          <br><br>
+         
+       </form>
+       
+       <script>
+        const chartData = {
+          labels: ["Easy", "Medium", "Hard"],
+          data: <%= JSON.stringify([leaderboard.lc_easy, leaderboard.lc_medium, leaderboard.lc_hard]) %>,
+          colors: ["#04dbcd", "#e3d80e", "#ff216f"],
+        };
+      </script>
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+        const myChart = document.querySelector(".my-chart");
+        // const ul = document.querySelector(".programming-stats .details ul");
+        
+        new Chart(myChart, {
+          type: "doughnut",
+          data: {
+            labels: chartData.labels,
+            datasets: [
+              {
+                label: "Solved",
+                data: chartData.data,
+                backgroundColor: chartData.colors
+              },
+            ],
+          },
+          options: {
+            cutout: '95%',
+            borderWidth: 0,
+            borderRadius: 0,
+            maintainAspectRatio : false,
+            hoverBorderWidth: 0,
+            plugins: {
+              legend: {
+                display: false,
+              },
+             
+              
+            },
+          },
+        });
+      
+        // const populateUl = () => {
+        //   chartData.labels.forEach((l, i) => {
+        //     let li = document.createElement("li");
+        //     li.innerHTML = `${l}: <span class='percentage'>${chartData.data[i]}</span>`;
+        //     ul.appendChild(li);
+        //   });
+        // };
+      
+        populateUl();
+      </script>
+    
+    <script>
+        const chartDataa = {
+          labelss: ["solved"],
+    dataa: <%= JSON.stringify([leaderboard.cf_solved]) %>,
+    colorss: [
+      <%= leaderboard.cf_rating %> < 1200 ? "#808080" :
+      <%= leaderboard.cf_rating %> < 1400 ? "#008000" :
+      <%= leaderboard.cf_rating %> < 1600 ? "#03a89e" :
+      <%= leaderboard.cf_rating %> < 1900 ? "#0000FF" :
+      <%= leaderboard.cf_rating %> < 2100 ? "#AA00AA" : "#04dbcd"
+    ],
+        };
+      </script>
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+        const myCharto = document.querySelector(".my-chart-1");
+        // const ul = document.querySelector(".programming-stats .details ul");
+        
+        new Chart(myCharto, {
+          type: "doughnut",
+          data: {
+            labels: chartDataa.labelss,
+            datasets: [
+              {
+                label: "Solved",
+                data: chartDataa.dataa,
+                backgroundColor: chartDataa.colorss
+              },
+            ],
+          },
+          options: {
+            cutout: '95%',
+            borderWidth: 0,
+            borderRadius: 0,
+            maintainAspectRatio : false,
+            hoverBorderWidth: 0,
+            plugins: {
+              legend: {
+                display: false,
+              },
+             
+              
+            },
+          },
+        });
+      
+        // const populateUl = () => {
+        //   chartData.labels.forEach((l, i) => {
+        //     let li = document.createElement("li");
+        //     li.innerHTML = `${l}: <span class='percentage'>${chartData.data[i]}</span>`;
+        //     ul.appendChild(li);
+        //   });
+        // };
+      
+        populateUl();
+      </script>
+      <script src="./particles1.js"></script>
+      <script src="./app1.js"></script> 
+      
+  
+</body>
+</html>
+
+

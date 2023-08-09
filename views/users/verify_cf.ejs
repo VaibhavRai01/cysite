@@ -1,0 +1,20 @@
+<% include('../layouts/header.ejs') %>
+
+
+<%
+    if(typeof message !== 'undefined'){
+        %>
+            <h4><%= message %></h4>
+        <%
+    }
+
+%>
+
+<h3>Change your last name to "bhadwa"</h3>
+
+<form action="" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="user_id" value="<%= user._id %>">
+    <input type="submit" value="Done">
+</form>
+
+<% include('../layouts/footer.ejs') %>

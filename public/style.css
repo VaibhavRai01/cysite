@@ -1,0 +1,85 @@
+body {
+    background-color: #1f1f1f;
+  }
+  .navbar
+  { padding-top: 20%;
+    margin-top: 10%;
+    display:flex;
+    background-color: #1f1f1f;
+    margin: auto;
+    margin-top:0;
+    padding-top:0;
+    justify-content:space-between;
+  }
+  .topleft
+  { padding-left:3%;
+    padding-top: 1%;
+    display : flex;
+    width:10%;
+    color: #ffffff;
+    justify-content:space-between;
+  }
+  .home:hover{
+    text-decoration: underline;;
+
+  }
+  .aboutus:hover{
+    text-decoration: underline;
+
+  }
+  .topRight{
+   float:right;
+   padding-top:1%;
+   padding-right: 5%;
+  }
+  .loginsignup
+  {padding-left:20%;
+    background: -webkit-linear-gradient(0deg,transparent 50%,#ffffff 50%);
+    background-size: 200%;
+    color: #ffffff;
+    padding-right: 20%;
+    padding-top: 10%;
+    border-radius: 265px;
+    border: 1px solid #FFF;
+    border-style: solid;
+    padding-bottom: 10%;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+
+.loginsignup:hover{
+ background-position:-100%;
+ color : #03A690;
+}
+
+
+.banner
+{
+    background-color:  #1f1f1f;
+    /* border: 1px solid red; */
+    height: calc(100% - (100px));;
+
+}
+.mainlogo
+{
+    size : 1rem;
+}
+#particles-js 
+{
+    background-image: url("white.svg");
+    background-color: #1f1f1f;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+    height: 96vh;
+}
+.heading {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    border: 1px solid red;
+}
+#mcbkl
+{
+  height : 200vh;
+}

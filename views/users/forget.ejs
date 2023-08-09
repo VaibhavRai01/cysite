@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./login.css">
+    <title>Loginpage</title>
+</head>
+<body>
+
+<div class = "Loginform">
+
+    <h1 id="heading">Reset Password</h1>
+    <%
+    if(typeof message !== 'undefined'){
+        %>
+            <h4 id="servermsg"><%= message %></h4>
+        <%
+    }
+
+    %>
+
+    <form action="/forget" method="post">
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" required placeholder="Enter email">
+        </div>
+        <br><br>
+        <div class = "login-button">
+        <input type="submit" class="buttonoriginal" value="Send reset link">
+        </div>
+    </form>
+
+
+</div>
+
+
+<% include('../layouts/footer.ejs') %>

@@ -1,0 +1,56 @@
+<% include('../layouts/header.ejs')%>
+<h1>Add new event</h1>
+
+
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="text" name="contestName" placeholder="Enter event name" required>
+    <br><br>
+    <input type="text" name="imageLink" placeholder="Enter image link" required>
+    <br><br>
+    <input type="text" name="contestLink" placeholder="Enter contest link" required>
+    <br><br>
+    <input type="datetime-local" name="date" placeholder="Enter date" required>
+    <br><br>
+    <input type="submit" value="Add event">
+</form>
+
+<table width = "75%">
+    <tr>
+        <th>contestName</th>
+        <th>contestLink</th>
+        <th>imageLink</th>
+        <th>date</th>
+    </tr>
+    <%
+        if(event.length > 0)
+        {
+            for(let i=0; i<event.length; i++){
+            %>
+            <tr>
+                <td><%= event[i].eventName %></td>
+                <td><%= event[i].contestLink %></td>
+                <td><%= event[i].imageLink %></td>
+                <td><%= event[i].date %></td>
+                <td>
+                    <a href="/admin/delete-event?id=<%= event[i]._id %>">Delete</a>
+                </td>
+
+            </tr>
+            <%
+            }
+        }
+    %>
+</table>
+
+<%
+    if(typeof message !== 'undefined'){
+        %>
+        <p style="color: red;"><%= message %></p>
+        <%
+    }
+   
+%>
+<a href="/admin/home">home</a>
+
+<% include('../layouts/footer.ejs')%>
+

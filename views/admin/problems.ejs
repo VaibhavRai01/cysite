@@ -1,0 +1,52 @@
+<% include('../layouts/header.ejs')%>
+<h1>Add new problem</h1>
+
+
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="text" name="index" placeholder="Enter index" required>
+    <br><br>
+    <input type="text" name="name" placeholder="Enter name" required>
+    <br><br>
+    <input type="text" name="link" placeholder="Enter link" required>
+    <br><br>
+    <input type="submit" value="Add problem">
+</form>
+
+<table width = "75%">
+    <tr>
+        <th>Index</th>
+        <th>Name</th>
+        <th>Link</th>
+    </tr>
+    <%
+        if(problem.length > 0)
+        {
+            for(let i=0; i<problem.length; i++){
+            %>
+            <tr>
+                <td><%= problem[i].problemIndex %></td>
+                <td><%= problem[i].problemName %></td>
+                <td><%= problem[i].problemLink %></td>
+                <td>
+                    <a href="/admin/delete-problem?id=<%= problem[i]._id %>">Delete</a>
+                </td>
+
+            </tr>
+            <%
+            }
+        }
+    %>
+</table>
+
+<%
+    if(typeof message !== 'undefined'){
+        %>
+        <p style="color: red;"><%= message %></p>
+        <%
+    }
+   
+%>
+<a href="/admin/home">home</a>
+
+<% include('../layouts/footer.ejs')%>
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./login.css">
+    <title>Loginpage</title>
+</head>
+<body>
+
+<div class = "Loginform">
+    <h1 id="heading">Login in your account</h1>
+    <%
+    if(typeof message !== 'undefined'){
+        %>
+            <h4><%= message %></h4>
+        <%
+    }
+    %>
+    <form action="" method="post">
+        <div class="input-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" required placeholder="Enter password">
+        </div>
+        <a href="/admin/forget" id = "forgettext">Forgot Password?</a>
+            
+        <br>
+        <div class = "login-button">
+            <input type="submit" class="buttonoriginal" value="Login">
+        </div>
+        
+    </form>
+   
+   
+</div>
+
+
+<% include('../layouts/footer.ejs') %>
+
+
+
+
+
