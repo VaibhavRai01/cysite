@@ -36,7 +36,7 @@ const addUserMail= async(name,email, password, user_id)=>{
             from:config.emailUser,
             to:email,
             subject:"Adminadd you and verify your mail",
-            html:'<p>Hello '+name+' click here to <a href="http://https://cysite.onrender.com/verify?id='+user_id+'"> verify</a> your mail. </p> <br><br> <b>Email- </b> '+email+' <br><b>Password -</b>'+password+''
+            html:'<p>Hello '+name+' click here to <a href="http://cysite.onrender.com/verify?id='+user_id+'"> verify</a> your mail. </p> <br><br> <b>Email- </b> '+email+' <br><b>Password -</b>'+password+''
 
         }
         transporter.sendMail(mailOptions,function(error,info){
@@ -69,7 +69,7 @@ const sendResetPasswordMail= async(name,email,token)=>{
             from:config.emailUser,
             to:email,
             subject:"Reset Password",
-            html:'<p>Hello '+name+' click here to <a href="http://https://cysite.onrender.com/admin/forget-password?token='+token+'"> Reset </a> your password. </p>'
+            html:'<p>Hello '+name+' click here to <a href="http://cysite.onrender.com/admin/forget-password?token='+token+'"> Reset </a> your password. </p>'
 
         }
         transporter.sendMail(mailOptions,function(error,info){
