@@ -1,7 +1,7 @@
 const mongoose=require("mongoose");
 mongoose.connect("mongodb+srv://21ucs225:cysite741852963@cluster0.pkur0h3.mongodb.net/");
 
-
+const port = process.env.PORT || 3000;
 const express= require("express");
 const app=express();
 
@@ -16,6 +16,6 @@ const adminRoute =require('./routes/adminRoute');
 
 app.use('/admin',adminRoute);
 
-app.listen(3000,function(){
+app.listen(port,function(){
     console.log("server running");
 });
